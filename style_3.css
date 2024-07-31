@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c6c6c6;
+}
+.container{
+    display: grid;
+    width: 90%;
+    height: 500px;
+    padding: 5px;
+    grid-auto-rows: 50px;
+    grid-template-columns: repeat(3,50px);
+    background-color: rgba(255, 255, 255);
+    border: 1px solid;
+    border-radius: 10px;
+    gap: 4px;
+    /* justify-items alinea los elementos en el eje x
+       en el espacio de la caja
+    */
+    /* justify-items: center; */
+    /* ---------------------------- */
+    /* align-items alinea los elementos en el eje y
+       en el espacio de la cajas
+    */
+    /* align-items: center; */
+    /* ---------------------------- */
+    /* justify-content en grid nos permite alinear las cajas de manera
+       general es decir alinea toda la cuadricula, funciona similar a
+       align-content en flex pero justify-content mueve los elementos
+       en el eje x
+    */
+    /* justify-content: center; */
+    /* ---------------------------- */
+    /* align-content sirve en grid para lo mismo que justify-content pero
+       en el eje y  
+    */
+    /* align-content: center; */
+    /* ---------------------------- */
+    /* una forma mas eficiente de usar estas propiedades es usando la 
+       propiedad place-content
+    */
+    place-content: center space-around;
+}
+
+.container section{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: deeppink;
+    color: white;
+}
+/* .container section:first-child{ */
+    /* al igual que en flex podemos usar
+       align-self para alinear de manera
+       particular una caja en el eje y
+    */
+    /* align-self: end; */
+    /* tambien tenemos justify-self para alinear
+       particularmente una caja en el eje x    
+    */
+    /* justify-self:end; */
+    /* background-color: deepskyblue; */
+/* } */
