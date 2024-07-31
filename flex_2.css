@@ -1,0 +1,62 @@
+*{
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.parent{
+    display: flex;
+    width: 250px;
+    height: 50vh;
+    border: 1px solid ;
+    background-color: rgb(232, 187, 5);
+    flex-flow: row wrap;
+    /* justify-content nos ayuda a alinear las cajas en el eje */
+    /* que estemos trabajando es decir si etamos usando row alineara */
+    /* las cajas a lo largo del eje x solamente por otro lado */
+    /* hara lo mismo con colum pero en el eje y */
+    justify-content: center;
+    /* align-items sirve para alinear el contenido al eje secunario */
+    /* es decir si estamos usando row en el que el eje primario es x */
+    /*align-items nos ayudara a alinear los elementos en el eje y */
+    /* y viseversa si estamos usando flex-direction: column; */
+    /* pero este eje es solo del bloque que lo contiene  */
+    align-items: end;
+    /* La propiedad align-content ajusta las líneas dentro de un contenedor  */
+    /* flex cuando hay espacio extra en el eje transversal (eje opuesto al eje principa). */
+    /* Esta propiedad no tiene efecto en cajas flexibles de una sola línea. */
+    align-content: center;
+    /* es una propiedad que nos ayuda a dar separacion entre cajas */
+    gap: 4vw ;
+}
+.item{
+    width: 50px;
+    height: 25px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(83, 193, 240);
+    flex-basis: auto;
+}
+.item:first-child{
+    background-color: crimson;
+    height: 50px;
+
+}
+.item:nth-child(3){
+    background-color: rgb(205, 91, 50);
+    height: 50px;
+}
+
+.item:nth-child(4){
+    background-color: rgb(205, 50, 50);
+    /* aling self tiene el mismo funcionamiento que aling-items pero es una */
+    /* propiedad para indecar el posicionamiento individual de una o varias cajas */
+    /* de esta manera damos un acomodo particular en el eje cruzado a X caja o cajas */
+    align-self: start;
+}
+.item:nth-child(5){
+    background-color: rgb(50, 104, 205);
+    height: 50px;
+}
+.item:last-child{    
+    background-color: yellowgreen;
+}

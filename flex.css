@@ -1,0 +1,100 @@
+*{
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* flex es una valor de la propiedad display que nos da una forma de acomodo para cajas */
+/* que nos permite acomodar de forma eficiente */
+/* las cajas */
+/* flex establece como debe de funcionar la caja padre respecto */
+/* a sus hijos, flex se coloca en las cajas padre */
+.parent{
+    display: flex;
+    width: 250px;
+    height: 90vh;
+    border: 1px solid ;
+    background-color: rgb(232, 187, 5);
+}
+/* flex tiene una propiedad llamada flex-direction */
+/* su valor inicial es row esta alinea las cajas en filas */
+/* si colocamo el valor column acomodara las cajas en columnas */
+/* ------------------------------------------------- */
+.parent{
+    flex-direction: row;/* eje prencipal */
+}
+/* ------------------------------------------------- */
+/* otra propiedad es flex-wrap esta nos da la posibilidad */
+/* de que si una caja no cabe en la fila o columna automticamente */
+/* se pase a otra fila o columna para esto necesitamos cambiar */
+/* el valor por defecto que es nowrap que lo que hace es impedir */
+/* que esto pase enconguiendo las cajas para que siempre cuadren */
+/* en la fila o columna, nowrap lo cambiaremos por wrap */
+/* ------------------------------------------------- */
+/* .parent{
+ flex-wrap: wrap;
+} */
+/* ------------------------------------------------- */
+/* con la propiedad flex-flow podemos indicar el flex-direction */
+/* y el flex-wrap y de esta manera reducir el codigo */
+.parent{
+    flex-flow: row wrap;
+}
+/* en flex para controlar el espacio entre cajas y como estas se compartan */
+/* tenemos tres propiedades estas son:  */
+.item{
+    /* flex-grow es una propiedad que controla si una caja con espacio crecera o no */
+    /* como el valor por defecto es 0 las cajas al tener mas espacio en el contenedor padre */
+    /* pero tener un espacio definido no creceran esto cambia si colocamos 1 en lugar de 0 */
+    /* ------------------------------------------------- */
+    /* flex-grow: 0; */
+    /* ------------------------------------------------- */
+    /* flex-shrink controla lo inverso de flex-grow esta propiedad define si una caja se hara mas */
+    /* pequeña en caso de no suficiente espacio el valor por defecto es 1 si queremos que no ocurra */
+    /* esto deberemos colocar 0 */
+    /* ------------------------------------------------- */
+    /* flex-shrink: 1; */
+    /* ------------------------------------------------- */
+    /* estas dos propiedades dependen de flex-basis esta propiedad nos ayuda a controlar el tamaño */
+    /* del contenedor, su valor base es auto cuando este es auto el tamaño inicial del elemento */
+    /* se calcula segun el contenido de la caja hijo y el tamaño de la caja padre */
+    /* a flex-basis tambien le podemos dar un valor en concreto del tamaño base que tendran las cajas hijo */
+    /* como 200px etc... */
+    /* si le damos el valor content las cajas se adaptaran a su contenido */
+    /* si se le da un valor 0 automaticamente todas las cajas tendran el mismo ancho y alto  */
+    /* ------------------------------------------------- */
+    flex-basis: auto;
+    /* ------------------------------------------------- */
+}
+/* flex es una propiedad que nos permite abreviar las etiquetas anterior mente vistas y */
+/* controlar de manera independiente el tamaño de as cajas */
+/* si nosotros le damos el valor: auto a flex este pondra los valores base de flex-grow, */
+/* flex-shrink y flex-basis */
+/* si le damos el valor de 1 todas las cajas tomaran el mismo espacio pero */
+/* podemos darle un valor de flex idependiente a cada caja es decir si colocamos */
+/* flex:1; pero individual mente a una caja le colocamos flex:2; esta caja tendra el doble de espacio */
+/* ------------------------------------------------- */
+/* .item{
+    flex: auto;
+}  */
+/* ------------------------------------------------- */
+/* si queremos cambiar el orden de las cajas podemos usar la propiedad */
+/* order esta propieda la asignamos a cada una de las cajas proporcinandole */
+/* un valor numero ejemplo: order: 1; order acomodara las cajas del numero mas */
+/* pequeño siendo esta caja la primera al mas grande siendo esta la utlima */
+.item{
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(83, 193, 240);
+    /* order: 2; */
+}
+.item:first-child{
+    background-color: crimson;
+    /* order: 3; */
+}
+.item:last-child{
+    /* flex: 2; */
+    background-color: yellowgreen;
+    /* order: 1; */
+}

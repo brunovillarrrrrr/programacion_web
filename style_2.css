@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* el valor por defecto de position es static */
+body{
+    background-color: lightgoldenrodyellow;
+    position: static;
+    height: 120vh;
+}
+/* relative es un valor de postion que nos ayuda a poscionar los */
+/* valores absolutos dentro de cajas relativas de esta manera */
+/* es mas facil el acomodo de cajas absolutas */
+body > section{
+    width: 80vw;
+    height: 40vh;
+    margin: auto;
+    border: 4px solid salmon;
+    background-color: aquamarine;
+    position: relative;
+    
+}
+/* con el valor absolute nuestra caja se va a mover acorde a un valor relativo */
+/* al no encontrar un valor padre con position relative toma el documento o el */
+/* tamaño de la pagina con las propiedades top,right,bottom,left, la poscion 0 */
+/* sera la poscion del pixel 0 de la propiedad asignada */
+/* en este caso esta caja se movera acorde a la caja padre ya que tiene un valor relativo */
+/* esto lo notamos ya que al poner todas las cordenadas de las propiedades */
+/* top,right,etc.. en cero la caja se queda al borde de la caja padre */
+.conteiner{
+    width: 20vw;
+    height: 20vh;
+    color: aliceblue;
+    background-color: rgb(104, 110, 108);
+    font-size: x-small;
+    position: absolute;
+    inset: 0 0 0 0;
+    margin: auto;
+}
+/* con la propiedad inset podemos darle valores a todas las propiedades de */
+/* absolute y si utilizamos margin:auto; cuando estas estan en 0  la caja*/
+/* se centrara aunque no es lo mas recomendado hacerlo de esta manera */
+
+/* fixed es otro valor de position parecido a absolut pero este produce que */
+/* la caja su mueva acorde a la ventana del navegador a este tipo de cajas */
+/* no les afectan margin's de otras cajas tampoco padding's */
+.position-fixed{
+    width: 100vw;
+    height: fit-content;
+    position: fixed;
+    z-index: 1;
+}
+/* z-index nos ayuda a poscionar un elemento arriba de otro  */
+
+
+.container-sticky{
+    width: 80vw;
+    height: 200vh;
+    margin: auto;
+    border: 4px solid rgb(65, 178, 244);
+    background-color: rgb(22, 251, 174);
+    position: relative;
+    inset: 40vh 0;
+}
+/* el valor sticky hace algo muy similar a fixed pero toma como referencia */
+/* a las cajas relativas para orientarse si bien fixed y sticky pueden parcerce */
+/* un poco en funcionalidad son totalmente diferentes */
+.sticky{
+    width: 20vw;
+    height: 20vh;
+    color: aliceblue;
+    background-color: rgb(156, 180, 172);
+    font-size: x-small;
+    position: sticky;
+    inset: 0 0 0 0;
+    margin: auto;
+}
